@@ -1,233 +1,411 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Application 2020</title>
-    <link rel="icon" type="image/png" href="../static/favicon.ico">
-    <link href="../static/css/site.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
+    <link rel="icon" type="image/png" href="../static/favicon.ico" />
+
+    <link href="../static/css/site.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script src="services.js"></script>
     <script src="router.js" defer></script>
     <script src="init.js" defer></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container" id="container">
-
-        <div id="app"></div>
-
-        <!--         
-        
-
-        <form class="text-center border border-light p-5" action="#" method="">
-            <h1>Edit Movie</h1>
-            <div class="form-group">
-                <label for="title">Movie Title</label>
-                <input type="text" class="form-control" placeholder="Movie Title" value="" name="title">
-            </div>
-            <div class="form-group">
-                <label for="description">Movie Description</label>
-                <textarea class="form-control" placeholder="Movie Description..." name="description"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="imageUrl">Image url</label>
-                <input type="text" class="form-control" placeholder="Image Url" value="" name="imageUrl">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-
-       
-     -->
-        <footer class="page-footer font-small">
-            <div class="footer-copyright text-center py-3">© 2020
-                <a href="https://www.youtube.com/watch?v=ZEf9cRoTmzQ&t" class="text-dark">
-                    The best web app in the World Wide Web </a>
-            </div>
-        </footer>
+      <div id="app"></div>
+      <footer class="page-footer font-small">
+        <div class="footer-copyright text-center py-3">
+          © 2020
+          <a
+            href="https://www.youtube.com/watch?v=ZEf9cRoTmzQ&t"
+            class="text-dark"
+          >
+            The best web app in the World Wide Web
+          </a>
+        </div>
+      </footer>
     </div>
 
     <!-- --- LOGIN -->
     <script type="text/x-handlebars-template" id="login-form-template">
-{{> navigation-template}}
-{{> notification-template}}
-        <form id="login-form" class="text-center border border-light p-5" onsubmit="onLoginSubmit(event)">
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" placeholder="Email" name="email" value="">
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" placeholder="Password" name="password" value="">
-            </div>
-        
-            <button type="submit" class="btn btn-primary">Login</button>
-        </form>
+      {{> navigation-template}}
+      {{> notification-template}}
+              <form id="login-form" class="text-center border border-light p-5" onsubmit="onLoginSubmit(event)">
+                  <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" class="form-control" placeholder="Email" name="email" value="">
+                  </div>
+                  <div class="form-group">
+                      <label for="password">Password</label>
+                      <input type="password" class="form-control" placeholder="Password" name="password" value="">
+                  </div>
+
+                  <button type="submit" class="btn btn-primary">Login</button>
+              </form>
     </script>
 
     <!-- --- REGISTRATION -->
     <script type="text/x-handlebars-template" id="register-form-template">
-        {{> navigation-template}}
-        {{> notification-template}}
-        <form id="register-form" class="text-center border border-light p-5" action="#" method="post" onsubmit="onRegSubmit(event)">
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" placeholder="Email" name="email" value="">
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" placeholder="Password" name="password" value="">
-            </div>
-        
-            <div class="form-group">
-                <label for="repeatPassword">Repeat Password</label>
-                <input type="password" class="form-control" placeholder="Repeat-Password" name="repeatPassword" value="">
-            </div>
-        
-            <button type="submit" class="btn btn-primary">Register</button>
-        </form>
+      {{> navigation-template}}
+      {{> notification-template}}
+      <form id="register-form" class="text-center border border-light p-5" action="#" method="post" onsubmit="onRegSubmit(event)">
+          <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" placeholder="Email" name="email" value="">
+          </div>
+          <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" placeholder="Password" name="password" value="">
+          </div>
+
+          <div class="form-group">
+              <label for="repeatPassword">Repeat Password</label>
+              <input type="password" class="form-control" placeholder="Repeat-Password" name="repeatPassword" value="">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Register</button>
+      </form>
     </script>
 
     <script type="text/x-handlebars-template" id="home-template">
-        {{> notification-template}}
-        {{> navigation-template}}
-        <div class="jumbotron jumbotron-fluid text-light" style="background-color: #343a40;">
-            <img src="https://s.studiobinder.com/wp-content/uploads/2019/06/Best-M-Night-Shyamalan-Movies-and-Directing-Style-StudioBinder.jpg"
-                class="img-fluid" alt="Responsive image">
-            <h1 class="display-4">Movies</h1>
-            <p class="lead">Unlimited movies, TV shows, and more. Watch anywhere. Cancel anytime.</p>
-        </div>
-        {{#if isAuth}}
-        {{> movies-template}} 
-        {{/if}}
+      {{> notification-template}}
+      {{> navigation-template}}
+      <div class="jumbotron jumbotron-fluid text-light" style="background-color: #343a40;">
+          <img src="https://s.studiobinder.com/wp-content/uploads/2019/06/Best-M-Night-Shyamalan-Movies-and-Directing-Style-StudioBinder.jpg"
+              class="img-fluid" alt="Responsive image">
+          <h1 class="display-4">Movies</h1>
+          <p class="lead">Unlimited movies, TV shows, and more. Watch anywhere. Cancel anytime.</p>
+      </div>
+    </script>
+
+    <script type="text/x-handlebars-template" id="about-template">
+      {{>navigation-template}}
+      <h1>About us page</h1>
+      <div class="w3-content" style="max-width:1500px">
+
+          <!-- Header -->
+          <div class="w3-opacity">
+          <span class="w3-button w3-xxlarge w3-white w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+          <div class="w3-clear"></div>
+          <header class="w3-center w3-margin-bottom">
+            <h1><b>Gallery</b></h1>
+            <p><b>A template to be used as a Gallery.</b></p>
+          </header>
+          </div>
+
+          <!-- Photo Grid -->
+          <div class="w3-row" id="myGrid" style="margin-bottom:128px">
+            <div class="w3-third">
+              <img src="./static/aboutus/rocks.jpg" style="width:100%">
+              <img src="./static/aboutus/sound.jpg" style="width:100%">
+              <img src="./static/aboutus/woods.jpg" style="width:100%">
+              <img src="./static/aboutus/rock.jpg" style="width:100%">
+              <img src="./static/aboutus/nature.jpg" style="width:100%">
+            </div>
+
+            <div class="w3-third">
+              <img src="./static/aboutus/bridge.jpg" style="width:100%">
+              <img src="./static/aboutus/notebook.jpg" style="width:100%">
+              <img src="./static/aboutus/london.jpg" style="width:100%">
+              <img src="./static/aboutus/rocks.jpg" style="width:100%">
+              <img src="./static/aboutus/avatar_g.jpg" style="width:100%">
+            </div>
+
+            <div class="w3-third">
+              <img src="./static/aboutus/workbench.jpg" style="width:100%">
+              <img src="./static/aboutus/gondol.jpg" style="width:100%">
+              <img src="./static/aboutus/skies.jpg" style="width:100%">
+              <img src="./static/aboutus/lights.jpg" style="width:100%">
+              <img src="./static/aboutus/workshop.jpg" style="width:100%">
+            </div>
+          </div>
+
+          <!-- End Page Content -->
+          </div>
     </script>
     <!-- --- NAVIGATION -->
     <script type="text/x-handlebars-template" id="navigation-template">
+      <nav
+        class="navbar navbar-expand-lg navbar-dark bg-dark"
+        onclick="navigateHandler(event)"
+      >
+        <a class="navbar-brand text-light nav-link" href="/home">Movies</a>
+        <ul class="navbar-nav ml-auto">
+          {{#if isAuth}}
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark " onclick="navigateHandler(event)">
-            <a class="navbar-brand text-light nav-link" href="/home">Movies</a>
-            <ul class="navbar-nav ml-auto ">
-                {{#if isAuth}}
-                 
-                <li class="nav-item">
-                    <a class="nav-link" href="/home">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/catalog">Catalog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/logout">Logout</ a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/logout">Logout</a>
-                </li>
-              {{else}}
-                <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/register">Register</a>
-                </li>
-                {{/if}}
-            </ul>
-        </nav>
+            <li class="nav-item">
+              <a class="nav-link" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/catalog">Catalog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/info">Info</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+          {{else}}
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/register">Register</a>
+            </li>
+          {{/if}}
+        </ul>
+      </nav>
     </script>
     <!-- --- ADD MOVIE TEMPLATE -->
     <script type="text/x-handlebars-template" id="add-movie-template">
-        {{>navigation-template}}
-        {{> notification-template}}
-        <form id="add-movie-form" class="text-center border border-light p-5" action="#" method="" onsubmit="onAddMovieSubmit(event)">
-            <h1>Add Movie</h1>
-            <div class="form-group">
-                <label for="title">Movie Title</label>
-                <input type="text" class="form-control" placeholder="Title" name="title" value="">
-            </div>
-            <div class="form-group">
-                <label for="description">Movie Description</label>
-                <textarea class="form-control" placeholder="Description" name="description"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="imageUrl">Image url</label>
-                <input type="text" class="form-control" placeholder="Image Url" name="imageUrl" value="">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+      {{>navigation-template}}
+      {{> notification-template}}
+      <form id="add-movie-form" class="text-center border border-light p-5" action="#" method="" onsubmit="onAddMovieSubmit(event)">
+          <h1>Add Movie</h1>
+          <div class="form-group">
+              <label for="title">Movie Title</label>
+              <input type="text" class="form-control" placeholder="Title" name="title" value="">
+          </div>
+          <div class="form-group">
+              <label for="description">Movie Description</label>
+              <textarea class="form-control" placeholder="Description" name="description"></textarea>
+          </div>
+          <div class="form-group">
+              <label for="imageUrl">Image url</label>
+              <input type="text" class="form-control" placeholder="Image Url" name="imageUrl" value="">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
     </script>
 
+    <!-- --- INFO PAGE TEMPLATE -->
+    <script type="text/x-handlebars-template" id="info-template">
+            {{>navigation-template}}
+            {{>notification-template}}
+            <h1>info here</h1>
+            <!-- Page Container -->
+      <div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+          <!-- The Grid -->
+          <div class="w3-row-padding">
+
+            <!-- Left Column -->
+            <div class="w3-third">
+
+              <div class="w3-white w3-text-grey w3-card-4">
+                <div class="w3-display-container">
+                  <img src="data:image/png;base64,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" style="width:100%" alt="Avatar">
+                  <div class="w3-display-bottomleft w3-container w3-text-black">
+                    <h2>Катерина Илиева</h2>
+                  </div>
+                </div>
+                <div class="w3-container">
+                  <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Designer</p>
+                  <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>България, Сандански</p>
+                  <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i> kate@mail.com</p>
+                  <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>1224435534</p>
+                  <hr>
+
+                  <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Умения</b></p>
+                  <p>Adobe Photoshop</p>
+                  <div class="w3-light-grey w3-round-xlarge w3-small">
+                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
+                  </div>
+                  <p>Photography</p>
+                  <div class="w3-light-grey w3-round-xlarge w3-small">
+                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
+                      <div class="w3-center w3-text-white">80%</div>
+                    </div>
+                  </div>
+                  <p>Illustrator</p>
+                  <div class="w3-light-grey w3-round-xlarge w3-small">
+                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
+                  </div>
+                  <p>Media</p>
+                  <div class="w3-light-grey w3-round-xlarge w3-small">
+                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
+                  </div>
+                  <br>
+
+                  <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
+                  <p>English</p>
+                  <div class="w3-light-grey w3-round-xlarge">
+                    <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%"></div>
+                  </div>
+                  <p>Spanish</p>
+                  <div class="w3-light-grey w3-round-xlarge">
+                    <div class="w3-round-xlarge w3-teal" style="height:24px;width:55%"></div>
+                  </div>
+                  <p>German</p>
+                  <div class="w3-light-grey w3-round-xlarge">
+                    <div class="w3-round-xlarge w3-teal" style="height:24px;width:25%"></div>
+                  </div>
+                  <br>
+                </div>
+              </div><br>
+
+            <!-- End Left Column -->
+            </div>
+
+            <!-- Right Column -->
+            <div class="w3-twothird">
+
+              <div class="w3-container w3-card w3-white w3-margin-bottom">
+                <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Професионални стажове</h2>
+                <div class="w3-container">
+                  <h5 class="w3-opacity"><b>Мениджър за един ден</b></h5>
+                  <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2020 - <span class="w3-tag w3-teal w3-round">Текущо</span></h6>
+                  <p>Състезание, което позволява да погледнеш през очите на мениджър за един ден.</p>
+                  <hr>
+                </div>
+                <div class="w3-container">
+                  <h5 class="w3-opacity"><b>Работа</b></h5>
+                  <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Mar 2012 - Dec 2014</h6>
+                  <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+                  <hr>
+                </div>
+                <div class="w3-container">
+                  <h5 class="w3-opacity"><b>Графичен дизайнер</b></h5>
+                  <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Януари 2010 - Март 2012</h6>
+                  <p>Изработване на уеб дизайни, както и на различни лога и постери. </p><br>
+                </div>
+              </div>
+
+              <div class="w3-container w3-card w3-white">
+                <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Образование</h2>
+                <div class="w3-container">
+                  <h5 class="w3-opacity"><b>ЗПГ "Климент Аркадиевич Тимирязев"</b></h5>
+                  <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Завинаги</h6>
+                  <p>Професионална гимназия в град Сандански</p>
+                  <hr>
+                </div>
+                <div class="w3-container">
+                  <h5 class="w3-opacity"><b>3то основно "Христо Ботев"</b></h5>
+                  <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2013 - 2018</h6>
+                  <p>Основно Образование</p>
+                  <hr>
+                </div>
+
+
+              </div>
+
+            <!-- End Right Column -->
+            </div>
+
+          <!-- End Grid -->
+          </div>
+
+          <!-- End Page Container -->
+        </div>
+    </script>
 
     <!-- --- MOVIES -->
     <script type="text/x-handlebars-template" id="movies-template">
-        <h1 class="text-center">Movies</h1>
-        <section>
-            <a href="/add-movie" class="btn btn-warning nav-link" onclick="navigateHandler(event)">Add Movie</a>
-            <form class="search float-right">
-                <label>Search: </label>
-                <input type="text">
-                <input type="submit" class="btn btn-info" value="Search">
-            </form>
-        </section>
-        
-        <div class=" mt-3 ">
-            <div class="row d-flex d-wrap">
-                <div class="card-deck d-flex justify-content-center">
-                    {{#each movies}}
-                    {{> card-template}}
-                    {{else}}
-                    <p>There are no movies!! You can add by pressig ADD MOVIE!</p>
+      <h1 class="text-center">Movies</h1>
+      <section>
+          <a href="/add-movie" class="btn btn-warning nav-link" onclick="navigateHandler(event)">Add Movie</a>
+          <form class="search float-right">
+              <label>Search: </label>
+              <input type="text">
+              <input type="submit" class="btn btn-info" value="Search">
+          </form>
+      </section>
 
-                    {{/each}}
+      <div class=" mt-3 ">
+          <div class="row d-flex d-wrap">
+              <div class="card-deck d-flex justify-content-center">
+                  {{#each movies}}
+                  {{> card-template}}
+                  {{else}}
+                  <p>There are no movies!! You can add by pressig ADD MOVIE!</p>
 
-        
-                </div>
-            </div>
-        </div>
+                  {{/each}}
+
+
+              </div>
+          </div>
+      </div>
     </script>
 
     <!-- CARD TEMPLATE  -->
     <script type="text/x-handlebars-template" id="card-template">
-        <div class="card mb-4">
-            <img class="card-img-top" src="{{imageUrl}}" alt="{{title}}" width="400">
-            <div class="card-body">
-                <h4 class="card-title">{{title}}</h4>
-            </div>  
-            <div class="card-footer">
-               <button type="button" class="btn btn-info"> 
-                   <a href="/details/{{key}}" onclick="navigateHandler(event)">Details</a>
-            </button>
-            </div>
+      <div class="card mb-4">
+        <img
+          class="card-img-top"
+          src="{{imageUrl}}"
+          alt="{{title}}"
+          width="400"
+        />
+        <div class="card-body">
+          <h4 class="card-title">{{title}}</h4>
         </div>
+        <div class="card-footer">
+          <button type="button" class="btn btn-info">
+            <a
+              href="/details/{{key}}"
+              onclick="navigateHandler(event)"
+            >Details</a>
+          </button>
+        </div>
+      </div>
     </script>
     <!-- DETAILS MOVIE TEMPLATE -->
     <script type="text/x-handlebars-template" id="details-template">
-        {{> navigation-template}}
-        <div class="container">
-            <div class="row bg-light text-dark">
-            <h1>Movie title: {{title}}</h1>
-                
-                <div class="col-md-8">
-                    <img class="img-thumbnail" src="{{imageUrl}}" alt="Movie">
-                </div>
-                <div class="col-md-4 text-center">
-                    <h3 class="my-3 ">Movie Description</h3>
-                    <p>{{description}}</p>
-                    <a class="btn btn-danger" href="/delete/{{key}}">Delete</a>
-                    <a class="btn btn-primary" href="#">Like</a>
-                    <span class="enrolled-span">Liked 99</span>
-                </div>
-            </div>
-        </div>
+      {{> navigation-template}}
+      <div class="container">
+          <div class="row bg-light text-dark">
+          <h1>Movie title: {{title}}</h1>
+
+              <div class="col-md-8">
+                  <img class="img-thumbnail" src="{{imageUrl}}" alt="Movie">
+              </div>
+              <div class="col-md-4 text-center">
+                  <h3 class="my-3 ">Movie Description</h3>
+                  <p>{{description}}</p>
+                  <a class="btn btn-danger" href="/delete/{{key}}">Delete</a>
+                  <a class="btn btn-primary" href="#">Like</a>
+                  <span class="enrolled-span">Liked 99</span>
+              </div>
+          </div>
+      </div>
+    </script>
+
+    <script type="text/x-handlebars-template" id="catalog-template">
+      {{>navigation-template}}
+      {{> movies-template}}
     </script>
 
     <script type="text/x-handlebars-template" id="notification-template">
-        <section class="notifications" style="display: none;">
-            <p class="notification-message" id="errorBox">Message...</p>
-        </section>
-        <section class="notifications" style="display: none;background-color:rgba(1, 131, 29, 0.541);">
-            <p class="notification-message" id="successBox">Message...</p>
-        </section>
+      <section class="notifications" style="display: none;">
+        <p class="notification-message" id="errorBox">Message...</p>
+      </section>
+      <section
+        class="notifications"
+        style="display: none;background-color:rgba(1, 131, 29, 0.541);"
+      >
+        <p class="notification-message" id="successBox">Message...</p>
+      </section>
     </script>
-</body>
-
+  </body>
 </html>

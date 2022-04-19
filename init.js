@@ -1,9 +1,12 @@
+ 
 function addEventListeners() {
   patrielTemplate("card-template");
   patrielTemplate("movies-template");
   patrielTemplate("navigation-template");
   patrielTemplate("notification-template");
-
+  patrielTemplate("catalog-template");
+  patrielTemplate("info-template");
+  patrielTemplate("about-template")
   navigate("home");
 }
 function patrielTemplate(id) {
@@ -32,13 +35,10 @@ function onLoginSubmit(event) {
       document.querySelector(".container").style.backgroundImage =
         "url(https://st2.depositphotos.com/1001378/11309/v/950/depositphotos_113095552-stock-illustration-brown-cinema-background-with-retro.jpg)";
       navigate("home");
-      postNotification(true, "You are now LOGED IN :)");
+      postNotification(true, "Успешно влезнахте в акаунта си!");
     } else {
       navigate("login");
-      postNotification(
-        false,
-        "Wrong password or email addres, pleas TRY again!"
-      );
+      postNotification(false, "Грешен имейл или парола, моля опитайте отново");
     }
   });
 }
@@ -59,13 +59,10 @@ function onRegSubmit(event) {
     authServices.register(email, password);
     postNotification(
       true,
-      "You are now registered. PLEASE LOG INTO YOUR ACCOUNT  :)"
+      "Вече сте регистрирани. Моля, влезте в акунта си :)"
     );
   } else {
-    postNotification(
-      false,
-      "Check if the pass are equal and if you include the email.. :D"
-    );
+    postNotification(false, "Проверете имейла или параолата си");
   }
 }
 
@@ -81,18 +78,15 @@ function onAddMovieSubmit(event) {
   if (isValid) {
     movieSurvices.add({ title, description, imageUrl }).then((res) => {
       navigate("home");
-      postNotification(true, "Added new film successfully :)");
+      postNotification(true, "Добавихте нов филм успешно :)");
     });
   } else {
     navigate("add-movie");
-    console.log("FIll all of the inputs");
-    postNotification(false, "Fill all fields,PLEASE :D");
+    postNotification(false, "Попълнете всичко полета");
   }
 }
 
 const navigate = (path) => {
-  //Here we change the address and shhow the html with  ROUTER()
-
   window.history.replaceState({}, "", "/" + path);
   router(path);
 };
