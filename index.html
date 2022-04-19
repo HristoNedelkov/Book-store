@@ -95,6 +95,7 @@
           <p class="lead">Unlimited movies, TV shows, and more. Watch anywhere. Cancel anytime.</p>
       </div>
     </script>
+
     <script type="text/x-handlebars-template" id="info-template">
         {{>navigation-template}}
         <h1>Info template</h1>
@@ -105,7 +106,7 @@
 
     <script type="text/x-handlebars-template" id="gallery-template">
       {{>navigation-template}}
-      <h1>About us page</h1>
+       
       <div class="w3-content" style="max-width:1500px">
 
           <!-- Header -->
@@ -148,8 +149,6 @@
           <!-- End Page Content -->
           </div>
     </script>
-
-
     <!-- --- NAVIGATION -->
     <script type="text/x-handlebars-template" id="navigation-template">
       <nav
@@ -171,6 +170,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/about">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/gallery">Gallery</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/logout">Logout</a>
@@ -326,7 +328,6 @@
           <!-- End Page Container -->
         </div>
     </script>
-
     <!-- --- MOVIES -->
     <script type="text/x-handlebars-template" id="movies-template">
       <h1 class="text-center">Movies</h1>
@@ -354,7 +355,6 @@
           </div>
       </div>
     </script>
-
     <!-- CARD TEMPLATE  -->
     <script type="text/x-handlebars-template" id="card-template">
       <div class="card mb-4">
