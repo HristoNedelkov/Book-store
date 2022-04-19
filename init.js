@@ -7,6 +7,7 @@ function addEventListeners() {
   patrielTemplate("catalog-template");
   patrielTemplate("info-template");
   patrielTemplate("about-template")
+  patrielTemplate("gallery-template")
   navigate("home");
 }
 function patrielTemplate(id) {
