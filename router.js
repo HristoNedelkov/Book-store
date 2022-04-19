@@ -8,8 +8,7 @@ const routes = {
 
 const router = async (fullPath) => {
   let [path, id] = fullPath.split("/");
-  console.log(`${id} is id of path - ${path}`);
-  let app = document.getElementById("app");
+    let app = document.getElementById("app");
   let templateData = authServices.getData();
 
   switch (path) {
