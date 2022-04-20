@@ -1,13 +1,16 @@
- 
 function addEventListeners() {
+  const btnContactform = document.getElementById("btn-contactform");
   patrielTemplate("card-template");
   patrielTemplate("movies-template");
   patrielTemplate("navigation-template");
   patrielTemplate("notification-template");
   patrielTemplate("catalog-template");
   patrielTemplate("info-template");
-  patrielTemplate("about-template")
-  patrielTemplate("gallery-template")
+  patrielTemplate("about-template");
+  patrielTemplate("contact-template");
+
+  //btnContactform.addEventListener("click", onCommentSubmit);
+
   navigate("home");
 }
 function patrielTemplate(id) {
@@ -107,6 +110,21 @@ function postNotification(type, text) {
     setTimeout(() => {
       notificationBox.style.display = "none";
     }, 4000);
+  }
+}
+
+function onCommentSubmit(e) {
+  const name = document.getElementById("name-contactform");
+  const email = document.getElementById("email-contactform");
+  const message = document.getElementById("message-contactform");
+
+  if (name != "" && email != "" && message != "") {
+    commentServices.add({ name, email, message }).then((res) => {
+      navigate("contact");
+      console.log(res);
+    });
+  } else {
+    postNotification(true, "Моля, попълнете всички полете!");
   }
 }
 addEventListeners();

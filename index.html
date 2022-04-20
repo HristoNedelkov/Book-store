@@ -97,57 +97,30 @@
     </script>
 
     <script type="text/x-handlebars-template" id="info-template">
-        {{>navigation-template}}
-        <h1>Info template</h1>
+      {{>navigation-template}}
+      <h1>Info template</h1>
 
-        <h1></h1>
-
+      <h1></h1>
     </script>
 
-    <script type="text/x-handlebars-template" id="gallery-template">
-      {{>navigation-template}}
-       
-      <div class="w3-content" style="max-width:1500px">
+    <script type="text/x-handlebars-template" id="contact-template">
+            {{>navigation-template}}
 
-          <!-- Header -->
-          <div class="w3-opacity">
-          <span class="w3-button w3-xxlarge w3-white w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></span>
-          <div class="w3-clear"></div>
-          <header class="w3-center w3-margin-bottom">
-            <h1><b>Gallery</b></h1>
-            <p><b>A template to be used as a Gallery.</b></p>
-          </header>
-          </div>
 
-          <!-- Photo Grid -->
-          <div class="w3-row" id="myGrid" style="margin-bottom:128px">
-            <div class="w3-third">
-              <img src="./static/images/rocks.jpg" style="width:100%">
-              <img src="./static/images/sound.jpg" style="width:100%">
-              <img src="./static/images/woods.jpg" style="width:100%">
-              <img src="./static/images/rock.jpg" style="width:100%">
-              <img src="./static/images/nature.jpg" style="width:100%">
-            </div>
-
-            <div class="w3-third">
-              <img src="./static/images/bridge.jpeg" style="width:100%">
-              <img src="./static/images/notebook.jpg" style="width:100%">
-              <img src="./static/images/london.jpg" style="width:100%">
-              <img src="./static/images/rocks.jpg" style="width:100%">
-              <img src="./static/images/avatar_g.jpg" style="width:100%">
-            </div>
-
-            <div class="w3-third">
-              <img src="./static/images/workbench.jpg" style="width:100%">
-              <img src="./static/images/gondol.jpg" style="width:100%">
-              <img src="./static/images/skies.jpg" style="width:100%">
-              <img src="./static/images/lights.jpg" style="width:100%">
-              <img src="./static/images/workshop.jpg" style="width:100%">
-            </div>
-          </div>
-
-          <!-- End Page Content -->
-          </div>
+      <div class="contact-container">
+        <img src="./static/images/Comment_alt_font_awesome.svg.png" class="brand-logo"/>
+        <div class="brand-title">Contact us</div>
+        <div class="inputs">
+          <label>Name</label>
+          <input id="name-contactform" type="text" placeholder="Enter you name:" />
+          <label>Email</label>
+          <input id="email-contactform" type="text" placeholder="example@test.com" />
+          <label>Message</label>
+          <input id="message-contactform" type="text" placeholder="comment" />
+          <button id="btn-contactform" type="button" onclick="onCommentSubmit()">Изпрати обратна връзка</button>
+        </div>
+      </div>
+                </div>
     </script>
     <!-- --- NAVIGATION -->
     <script type="text/x-handlebars-template" id="navigation-template">
@@ -172,7 +145,7 @@
               <a class="nav-link" href="/about">About us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/gallery">Gallery</a>
+              <a class="nav-link" href="/contact">Contact us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/logout">Logout</a>

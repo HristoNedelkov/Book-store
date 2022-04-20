@@ -81,14 +81,23 @@ const movieSurvices = {
     let data = await res.json();
     return data;
   },
-  async deleteOne(id) {
-    const url = window.location.href;
-    console.log(url);
    
-    // fetch(`${dataBaseUrl}/movies/${id}.json`, {
-    // method: "DELETE",
-    // })
-    //.then((res) => res.text()) // or res.json()
-    // .then((res) => console.log(res));
-  },
 };
+const commentServices = {
+  async add(commentData) {
+    let res = await fetch(`${dataBaseUrl}/movies.json`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(commentData),
+    });
+    let data = await res.json();
+    return data;
+  },
+  async getAll() {
+    let res = await fetch(`${dataBaseUrl}/comments.json`);
+    let data = await res.json();
+    return Object.keys(data).map((key) => ({ key, ...data[key] }));
+  },
+}
