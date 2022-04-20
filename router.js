@@ -27,11 +27,11 @@ const router = async (fullPath) => {
       let movieDetails = await movieSurvices.getOne(id);
       Object.assign(templateData, movieDetails);
       console.log(templateData);
-      console.log(movieDetails);
       break;
-    case "delete":
-      await movieSurvices.deleteOne(id);
+    case "contact":
+      templateData.comments = await commentServices.getAll();
       break;
+
     default:
       break;
   }

@@ -1,57 +1,56 @@
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 .card {
-    min-width: 18rem;
-    max-width: 18rem;
+  min-width: 18rem;
+  max-width: 18rem;
 }
 
 .card-img-top {
-    width: 100%;
-    height: 15vw;
-    object-fit: cover;
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
 }
 
 .btn-group {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .badge {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .enrolled-span {
-    text-decoration: underline;
-    background-color: green;
-    color: white;
-    padding: 2%;
-    border-radius: 4px;
+  text-decoration: underline;
+  background-color: green;
+  color: white;
+  padding: 2%;
+  border-radius: 4px;
 }
 
-
 .notifications {
-    background-color: rgba(238, 74, 74, 0.699);
-    margin: 0 auto;
-    text-align: center;
-    padding: 1%;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    border-radius: 6px;
-    color: white;
-    font-style: italic;
-    text-decoration: underline;
-    box-shadow: 0 5px 10px #cccccc;
+  background-color: rgba(238, 74, 74, 0.699);
+  margin: 0 auto;
+  text-align: center;
+  padding: 1%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  border-radius: 6px;
+  color: white;
+  font-style: italic;
+  text-decoration: underline;
+  box-shadow: 0 5px 10px #cccccc;
 }
 
 #app > div.mt-3 > div > div > div > div.card-footer > button a {
-    color: white;
-    font-style: italic;
+  color: white;
+  font-style: italic;
 }
 
 /* CONTACT FORM AND COMMENTS */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap");
 
 .contact-container {
   font-family: poppins;
@@ -66,7 +65,7 @@ a {
   margin: 50px auto;
 }
 
- .contact-container .brand-logo {
+.contact-container .brand-logo {
   height: 100px;
   width: 100px;
   background: url("../images/Comment_alt_font_awesome.svg.png");
@@ -76,20 +75,22 @@ a {
   box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
 }
 
- .contact-container .brand-title {
+.contact-container .brand-title {
   margin-top: 10px;
   font-weight: 900;
   font-size: 1.8rem;
-  color: #1DA1F2;
+  color: #1da1f2;
   letter-spacing: 1px;
 }
 
- .contact-container .inputs {
+.contact-container .inputs {
   text-align: left;
   margin-top: 30px;
 }
 
-.contact-container label, input, button {
+.contact-container label,
+input,
+button {
   display: block;
   width: 100%;
   padding: 0;
@@ -123,7 +124,7 @@ a {
 .contact-container button {
   color: white;
   margin-top: 20px;
-  background: #1DA1F2;
+  background: #1da1f2;
   height: 40px;
   border-radius: 20px;
   cursor: pointer;
@@ -152,4 +153,12 @@ a {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.comment-card {
+  border: 2px solid black;
+  border-radius: 25px;
+  font-family: poppins;
+  padding: 15px;
+  margin-bottom: 20px;
 }

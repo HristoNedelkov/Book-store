@@ -81,11 +81,10 @@ const movieSurvices = {
     let data = await res.json();
     return data;
   },
-   
 };
 const commentServices = {
   async add(commentData) {
-    let res = await fetch(`${dataBaseUrl}/movies.json`, {
+    let res = await fetch(`${dataBaseUrl}/comments.json`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -98,6 +97,9 @@ const commentServices = {
   async getAll() {
     let res = await fetch(`${dataBaseUrl}/comments.json`);
     let data = await res.json();
-    return Object.keys(data).map((key) => ({ key, ...data[key] }));
+    console.log()
+    if (data) {
+      return Object.keys(data).map((key) => ({ key, ...data[key] }));
+    }
   },
-}
+};

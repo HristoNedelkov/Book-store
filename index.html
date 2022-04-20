@@ -47,7 +47,6 @@
     <!-- --- LOGIN -->
     <script type="text/x-handlebars-template" id="login-form-template">
       {{> navigation-template}}
-      {{> notification-template}}
               <form id="login-form" class="text-center border border-light p-5" onsubmit="onLoginSubmit(event)">
                   <div class="form-group">
                       <label for="email">Email</label>
@@ -65,7 +64,6 @@
     <!-- --- REGISTRATION -->
     <script type="text/x-handlebars-template" id="register-form-template">
       {{> navigation-template}}
-      {{> notification-template}}
       <form id="register-form" class="text-center border border-light p-5" action="#" method="post" onsubmit="onRegSubmit(event)">
           <div class="form-group">
               <label for="email">Email</label>
@@ -86,7 +84,6 @@
     </script>
 
     <script type="text/x-handlebars-template" id="home-template">
-      {{> notification-template}}
       {{> navigation-template}}
       <div class="jumbotron jumbotron-fluid text-light" style="background-color: #343a40;">
           <img src="https://s.studiobinder.com/wp-content/uploads/2019/06/Best-M-Night-Shyamalan-Movies-and-Directing-Style-StudioBinder.jpg"
@@ -105,8 +102,6 @@
 
     <script type="text/x-handlebars-template" id="contact-template">
             {{>navigation-template}}
-
-
       <div class="contact-container">
         <img src="./static/images/Comment_alt_font_awesome.svg.png" class="brand-logo"/>
         <div class="brand-title">Contact us</div>
@@ -120,8 +115,21 @@
           <button id="btn-contactform" type="button" onclick="onCommentSubmit()">Изпрати обратна връзка</button>
         </div>
       </div>
-                </div>
+
+      <div id="all-comments">
+         {{#each comments}}
+         {{>comment-card-template}}
+         {{else}}
+         <h1>No comments yet! Please be the first to comment!</h1>
+         {{/each}}
     </script>
+    <script type="text/x-handlebars-template" id="comment-card-template">
+      <div class="comment-card">
+        <h1>{{name}} - <span>{{email}}</span></h1>
+        <p>{{message}}</p>
+      </div>
+    </script>
+
     <!-- --- NAVIGATION -->
     <script type="text/x-handlebars-template" id="navigation-template">
       <nav
@@ -164,7 +172,6 @@
     <!-- --- ADD MOVIE TEMPLATE -->
     <script type="text/x-handlebars-template" id="add-movie-template">
       {{>navigation-template}}
-      {{> notification-template}}
       <form id="add-movie-form" class="text-center border border-light p-5" action="#" method="" onsubmit="onAddMovieSubmit(event)">
           <h1>Add Movie</h1>
           <div class="form-group">
@@ -374,18 +381,6 @@
     <script type="text/x-handlebars-template" id="catalog-template">
       {{>navigation-template}}
       {{> movies-template}}
-    </script>
-
-    <script type="text/x-handlebars-template" id="notification-template">
-      <section class="notifications" style="display: none;">
-        <p class="notification-message" id="errorBox">Message...</p>
-      </section>
-      <section
-        class="notifications"
-        style="display: none;background-color:rgba(1, 131, 29, 0.541);"
-      >
-        <p class="notification-message" id="successBox">Message...</p>
-      </section>
     </script>
   </body>
 </html>
