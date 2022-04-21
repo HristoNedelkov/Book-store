@@ -8,6 +8,7 @@ const routes = {
   catalog: "catalog-template",
   about: "about-template",
   contact: "contact-template",
+  gallery: "gallery-template",
 };
 
 const router = async (fullPath) => {

@@ -7,6 +7,7 @@ function addEventListeners() {
   patrielTemplate("info-template");
   patrielTemplate("about-template");
   patrielTemplate("contact-template");
+  patrielTemplate("gallery-template");
   patrielTemplate("comment-card-template");
 
   //btnContactform.addEventListener("click", onCommentSubmit);

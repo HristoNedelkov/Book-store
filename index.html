@@ -147,6 +147,9 @@
               <a class="nav-link" href="/catalog">Catalog</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="/gallery">Gallery</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="/info">Info</a>
             </li>
             <li class="nav-item">
@@ -191,6 +194,28 @@
     </script>
 
     <!-- --- INFO PAGE TEMPLATE -->
+    <script type="text/x-handlebars-template" id="gallery-template">
+      {{>navigation-template}}
+      <div class="w3-row" id="myGrid" style="margin-bottom:128px">
+        <div class="w3-third">
+          <img src="./static/images/bookstore/1.jpg" style="width:100%; margin: 10px;">
+          <img src="./static/images/bookstore/2.jpg" style="width:100%; margin: 10px;">
+          <img src="./static/images/bookstore/3.jpg" style="width:100%; margin: 10px;">
+        </div>
+
+        <div class="w3-third">
+          <img src="./static/images/bookstore/6.jpg" style="width:100%; margin: 10px;">
+          <img src="./static/images/bookstore/7.jpg" style="width:100%; margin: 10px;">
+          <img src="./static/images/bookstore/8.jpg" style="width:100%; margin: 10px;">
+        </div>
+
+        <div class="w3-third">
+          <img src="./static/images/bookstore/4.jpg" style="width:100%; margin: 10px;">
+          <img src="./static/images/bookstore/5.jpeg" style="width:100%">
+
+        </div>
+      </div>
+    </script>
     <script type="text/x-handlebars-template" id="about-template">
             {{>navigation-template}}
             <!-- Page Container -->

@@ -156,9 +156,11 @@ button {
 }
 
 .comment-card {
+  background-color: #589ace;
   border: 2px solid black;
   border-radius: 25px;
   font-family: poppins;
   padding: 15px;
+  color: #ddd;
   margin-bottom: 20px;
 }
