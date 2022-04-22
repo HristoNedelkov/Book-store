@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Application 2020</title>
+    <title>Сайт на Катерина Илиева 2022</title>
     <link rel="icon" type="image/png" href="../static/favicon.ico" />
 
     <link href="../static/css/site.css" type="text/css" rel="stylesheet" />
@@ -33,12 +33,12 @@
       <div id="app"></div>
       <footer class="page-footer font-small">
         <div class="footer-copyright text-center py-3">
-          © 2020
+          © 2022
           <a
             href="https://www.youtube.com/watch?v=ZEf9cRoTmzQ&t"
             class="text-dark"
           >
-            The best web app in the World Wide Web
+            Сайт на Катерина Илиева
           </a>
         </div>
       </footer>
@@ -88,8 +88,8 @@
       <div class="jumbotron jumbotron-fluid text-light" style="background-color: #343a40;">
           <img src="https://s.studiobinder.com/wp-content/uploads/2019/06/Best-M-Night-Shyamalan-Movies-and-Directing-Style-StudioBinder.jpg"
               class="img-fluid" alt="Responsive image">
-          <h1 class="display-4">Movies</h1>
-          <p class="lead">Unlimited movies, TV shows, and more. Watch anywhere. Cancel anytime.</p>
+          <h1 class="display-4">Books Store</h1>
+          <p class="lead">Unlimited books, Buy, and Sell. </p>
       </div>
     </script>
 
@@ -219,7 +219,7 @@
         class="navbar navbar-expand-lg navbar-dark bg-dark"
         onclick="navigateHandler(event)"
       >
-        <a class="navbar-brand text-light nav-link" href="/home">Movies</a>
+        <a class="navbar-brand text-light nav-link" href="/home">Books Store</a>
         <ul class="navbar-nav ml-auto">
           {{#if isAuth}}
 
@@ -259,13 +259,13 @@
     <script type="text/x-handlebars-template" id="add-movie-template">
       {{>navigation-template}}
       <form id="add-movie-form" class="text-center border border-light p-5" action="#" method="" onsubmit="onAddMovieSubmit(event)">
-          <h1>Add Movie</h1>
+          <h1>Add Book</h1>
           <div class="form-group">
-              <label for="title">Movie Title</label>
+              <label for="title">Book Title</label>
               <input type="text" class="form-control" placeholder="Title" name="title" value="">
           </div>
           <div class="form-group">
-              <label for="description">Movie Description</label>
+              <label for="description">Book Description</label>
               <textarea class="form-control" placeholder="Description" name="description"></textarea>
           </div>
           <div class="form-group">
@@ -299,6 +299,7 @@
         </div>
       </div>
     </script>
+
     <script type="text/x-handlebars-template" id="about-template">
             {{>navigation-template}}
             <!-- Page Container -->
@@ -418,9 +419,9 @@
     </script>
     <!-- --- MOVIES -->
     <script type="text/x-handlebars-template" id="movies-template">
-      <h1 class="text-center">Movies</h1>
+      <h1 class="text-center">All Books</h1>
       <section>
-          <a href="/add-movie" class="btn btn-warning nav-link" onclick="navigateHandler(event)">Add Movie</a>
+          <a href="/add-movie" class="btn btn-warning nav-link" onclick="navigateHandler(event)">Add Book</a>
           <form class="search float-right">
               <label>Search: </label>
               <input type="text">
@@ -434,8 +435,7 @@
                   {{#each movies}}
                   {{> card-template}}
                   {{else}}
-                  <p>There are no movies!! You can add by pressig ADD MOVIE!</p>
-
+                  <p>There are no books! You can add by pressig ADD BOOK!</p>
                   {{/each}}
 
 
@@ -470,17 +470,16 @@
       {{> navigation-template}}
       <div class="container">
           <div class="row bg-light text-dark">
-          <h1>Movie title: {{title}}</h1>
+          <h1>BOOK TITLE: {{title}}</h1>
 
               <div class="col-md-8">
                   <img class="img-thumbnail" src="{{imageUrl}}" alt="Movie">
               </div>
               <div class="col-md-4 text-center">
-                  <h3 class="my-3 ">Movie Description</h3>
+                  <h3 class="my-3 ">Описание на Книгата</h3>
                   <p>{{description}}</p>
-                  <a class="btn btn-danger" href="/delete/{{key}}">Delete</a>
-                  <a class="btn btn-primary" href="#">Like</a>
-                  <span class="enrolled-span">Liked 99</span>
+                  <a class="btn btn-primary" href="#">Харесай</a>
+                  <span class="enrolled-span">Харесано 99 пъти</span>
               </div>
           </div>
       </div>

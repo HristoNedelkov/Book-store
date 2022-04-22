@@ -73,8 +73,11 @@ const movieSurvices = {
   async getAll() {
     let res = await fetch(`${dataBaseUrl}/movies.json`);
     let data = await res.json();
-
-    return Object.keys(data).map((key) => ({ key, ...data[key] }));
+    if (data) {
+      return Object.keys(data).map((key) => ({ key, ...data[key] }));
+    } else {
+      return {};
+    }
   },
   async getOne(id) {
     let res = await fetch(`${dataBaseUrl}/movies/${id}.json`);
@@ -97,9 +100,11 @@ const commentServices = {
   async getAll() {
     let res = await fetch(`${dataBaseUrl}/comments.json`);
     let data = await res.json();
-    console.log()
+    console.log();
     if (data) {
       return Object.keys(data).map((key) => ({ key, ...data[key] }));
+    } else {
+      return {};
     }
   },
 };
