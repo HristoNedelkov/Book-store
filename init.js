@@ -59,7 +59,11 @@ function onRegSubmit(event) {
       ? true
       : false;
   if (isValid) {
+    alert('Успешна регистрация!')
     authServices.register(email, password);
+    navigate("login");
+  } else {
+    alert('Паролата трябва да бъде по-дълга от 5 символа.')
   }
 }
 
